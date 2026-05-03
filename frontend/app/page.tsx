@@ -1,65 +1,327 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+    <>
+      {/* NAV */}
+      <nav>
+        <div className="container nav-inner">
+          <a className="nav-logo" href="#">
+            <span className="logo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </span>
+            AUTO<span>LAB</span>
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          <ul className="nav-links">
+            <li><a href="#why">Why</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#levels">Challenges</a></li>
+            <li><a href="#tools">Docs</a></li>
+            <li>
+              <a className="nav-gh" href="https://github.com/yourusername/autolab" target="_blank" rel="noreferrer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </li>
+          </ul>
         </div>
-      </main>
-    </div>
+      </nav>
+
+      {/* HERO */}
+      <section className="hero">
+        <div className="container hero-container">
+          <div className="hero-content">
+            <div className="hero-badge">
+              <span className="badge-dot"></span>
+              BROWSER AUTOMATION TRAINING GROUND
+            </div>
+            <h1>Stop reading docs.<br /><em>Start automating.</em></h1>
+            <p className="hero-desc">
+              AutoLab is a hands-on lab for learning browser automation tools like Playwright and Selenium — by solving real challenges on controlled websites, not by watching tutorials.
+            </p>
+            <div className="hero-actions">
+              <a className="btn-main" href="#levels">
+                <span>Start Challenge 01</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a className="btn-outline" href="https://github.com/yourusername/autolab" target="_blank" rel="noreferrer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                View on GitHub
+              </a>
+            </div>
+            <div className="hero-stats">
+              <div className="stat">
+                <span className="stat-value">3</span>
+                <span className="stat-label">Challenges</span>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat">
+                <span className="stat-value">Any</span>
+                <span className="stat-label">Framework</span>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat">
+                <span className="stat-value">∞</span>
+                <span className="stat-label">Solutions</span>
+              </div>
+            </div>
+          </div>
+          <div className="hero-image">
+            <div className="hero-image-wrapper">
+              <div className="hero-glow"></div>
+              <img src="/assets/front.jpg" alt="Automation Training Environment" />
+              <div className="hero-image-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Live Environment
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY */}
+      <section className="section" id="why">
+        <div className="container">
+          <div className="section-header">
+            <div className="section-label">// WHY THIS EXISTS</div>
+            <h2 className="section-title">Built because tutorials <em>aren&apos;t enough.</em></h2>
+            <p className="section-subtitle">The gap between &ldquo;hello world&rdquo; scripts and real-world automation is massive. AutoLab bridges it.</p>
+          </div>
+          <div className="why-grid">
+            <div className="why-cell full">
+              <div className="why-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </div>
+              <h3>THE PROBLEM</h3>
+              <p>
+                You want to learn browser automation — Playwright, Puppeteer, Selenium. You read the docs.
+                You watch a tutorial. You write a script that scrapes a simple page. And then you hit a real website
+                and <strong>nothing works the way it should.</strong> Dynamic content. Weird selectors. Timing issues.
+                There was no place to practice on messy, realistic targets before facing the real web.
+                <em>AutoLab is that place.</em>
+              </p>
+            </div>
+            <div className="why-cell">
+              <div className="why-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <h3>WHAT YOU NEED</h3>
+              <p>Your own machine. Node.js or Python. Playwright or Selenium installed. That&apos;s it. AutoLab provides the target — a live website you automate against. You write the script locally, run it yourself, and check your own output.</p>
+            </div>
+            <div className="why-cell">
+              <div className="why-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+              <h3>WHAT YOU GAIN</h3>
+              <p>Practical debugging skills. An understanding of how real web behavior works. The confidence to open any website and automate it — even when it fights back.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="section" id="how">
+        <div className="container">
+          <div className="section-header">
+            <div className="section-label">// HOW IT WORKS</div>
+            <h2 className="section-title">Five steps. <em>No shortcuts.</em></h2>
+          </div>
+          <div className="steps">
+            <div className="step">
+              <div className="step-num">01</div>
+              <div className="step-line"></div>
+              <div className="step-body">
+                <h4>Pick a level</h4>
+                <p>Each level has a target website and a goal. Read the goal. Open the target site in your browser to understand its structure.</p>
+              </div>
+            </div>
+            <div className="step">
+              <div className="step-num">02</div>
+              <div className="step-line"></div>
+              <div className="step-body">
+                <h4>Set up your environment</h4>
+                <p>Install <code>playwright</code> or <code>selenium</code> locally. No sandboxes, no in-browser editors — you run scripts on your own machine, like a real engineer.</p>
+              </div>
+            </div>
+            <div className="step">
+              <div className="step-num">03</div>
+              <div className="step-line"></div>
+              <div className="step-body">
+                <h4>Write your script</h4>
+                <p>Automate the target site to achieve the goal. Use any tool, any language. There&apos;s no single right answer — only correct output.</p>
+              </div>
+            </div>
+            <div className="step">
+              <div className="step-num">04</div>
+              <div className="step-line"></div>
+              <div className="step-body">
+                <h4>Check your output</h4>
+                <p>Compare your script&apos;s output to the goal. No automated grader — you know when you&apos;ve got it. Move to the next level when you&apos;re satisfied.</p>
+              </div>
+            </div>
+            <div className="step">
+              <div className="step-num">05</div>
+              <div className="step-line"></div>
+              <div className="step-body">
+                <h4>Share your solution on GitHub</h4>
+                <p>If your solution is unique, open a PR. It gets reviewed and merged into the <code>/solutions</code> folder — your name in the repo forever.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* LEVELS */}
+      <section className="section" id="levels">
+        <div className="container">
+          <div className="section-header">
+            <div className="section-label">// CHALLENGES — TIER 1</div>
+            <h2 className="section-title">Start here. <em>Level up.</em></h2>
+            <p className="section-subtitle">Each challenge is a controlled website with a specific automation goal. Solve them in order, or jump to what interests you.</p>
+          </div>
+          <div className="levels-grid">
+            <a className="level-card" href="./challenges/01-login-form/index.html">
+              <div className="level-status">
+                <div className="level-status-dot"></div>
+              </div>
+              <div className="level-id">01</div>
+              <div className="level-info">
+                <div className="level-title">The Login Gate</div>
+                <div className="level-hint">Fill a form. Submit. Extract what&apos;s hidden behind it.</div>
+              </div>
+              <div className="level-tag tag-easy">EASY</div>
+              <div className="level-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </a>
+            <a className="level-card" href="./challenges/02-data-table/index.html">
+              <div className="level-status">
+                <div className="level-status-dot"></div>
+              </div>
+              <div className="level-id">02</div>
+              <div className="level-info">
+                <div className="level-title">Paginated Table</div>
+                <div className="level-hint">Multiple pages of data. Collect it all. Output as JSON.</div>
+              </div>
+              <div className="level-tag tag-easy">EASY</div>
+              <div className="level-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </a>
+            <a className="level-card" href="./challenges/03-timed-form/index.html">
+              <div className="level-status">
+                <div className="level-status-dot"></div>
+              </div>
+              <div className="level-id">03</div>
+              <div className="level-info">
+                <div className="level-title">Beat the Clock</div>
+                <div className="level-hint">Fill and submit a multi-field form before the timer runs out.</div>
+              </div>
+              <div className="level-tag tag-easy">EASY</div>
+              <div className="level-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </a>
+            <div className="level-card locked">
+              <div className="level-status">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              </div>
+              <div className="level-id">04</div>
+              <div className="level-info">
+                <div className="level-title">Tier 2 — Coming soon</div>
+                <div className="level-hint">Dynamic DOM, lazy loading, SPA behavior</div>
+              </div>
+              <div className="level-tag tag-locked">LOCKED</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TOOLS / DOCS */}
+      <section className="section" id="tools">
+        <div className="container">
+          <div className="section-header">
+            <div className="section-label">// REFERENCE DOCS</div>
+            <h2 className="section-title">Your toolkit. <em>Your choice.</em></h2>
+            <p className="section-subtitle">
+              AutoLab is tool-agnostic. Use whatever you&apos;re comfortable with. Here are the official docs for the most common tools:
+            </p>
+          </div>
+          <div className="tools-row">
+            <a className="tool-card" href="https://playwright.dev/docs/intro" target="_blank" rel="noreferrer">
+              <div className="tool-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              </div>
+              <div>
+                <div className="tool-name">Playwright</div>
+                <div className="tool-desc">Node.js · Python · Java · .NET</div>
+              </div>
+              <div className="tool-arrow">↗</div>
+            </a>
+            <a className="tool-card" href="https://www.selenium.dev/documentation/" target="_blank" rel="noreferrer">
+              <div className="tool-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <div>
+                <div className="tool-name">Selenium</div>
+                <div className="tool-desc">Python · Java · JS · Ruby · C#</div>
+              </div>
+              <div className="tool-arrow">↗</div>
+            </a>
+            <a className="tool-card" href="https://pptr.dev/" target="_blank" rel="noreferrer">
+              <div className="tool-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg>
+              </div>
+              <div>
+                <div className="tool-name">Puppeteer</div>
+                <div className="tool-desc">Node.js · Chrome DevTools Protocol</div>
+              </div>
+              <div className="tool-arrow">↗</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* GITHUB CTA */}
+      <div className="gh-banner">
+        <div className="container">
+          <div className="gh-inner">
+            <div className="gh-glow"></div>
+            <div className="gh-content">
+              <div className="gh-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <div className="gh-text">
+                <h3>This is built in public.</h3>
+                <p>
+                  Found a bug? Have an idea for a new level? Open an issue.<br />
+                  Solved a level in a unique way? Open a PR — unique solutions get merged.
+                </p>
+              </div>
+            </div>
+            <a className="btn-main" href="https://github.com/yourusername/autolab" target="_blank" rel="noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span>Star on GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* FOOTER */}
+      <footer>
+        <div className="container footer-inner">
+          <div className="footer-left">
+            <div className="footer-logo">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              AUTOLAB
+            </div>
+            <div className="footer-note">Open source · Built for automation engineers</div>
+          </div>
+          <div className="footer-links">
+            <a href="https://github.com/yourusername/autolab" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="#levels">Challenges</a>
+            <a href="#tools">Docs</a>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }
