@@ -1,3 +1,29 @@
+const ToolsMarquee = () => {
+  const tools = ["Playwright", "Selenium", "Puppeteer", "Cypress", "WebdriverIO", "Node.js", "Python", "Java", "TypeScript", "Ruby", "CDP", "Go", "Rust"];
+  return (
+    <section className="marquee-wrapper">
+      <div className="marquee-mask">
+        <div className="marquee-track">
+          <div className="marquee-content">
+            {tools.map((t, i) => (
+              <span key={`first-${i}`} className="marquee-item">
+                <span className="marquee-dot">◆</span> {t}
+              </span>
+            ))}
+          </div>
+          <div className="marquee-content">
+            {tools.map((t, i) => (
+              <span key={`second-${i}`} className="marquee-item">
+                <span className="marquee-dot">◆</span> {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default function Home() {
   return (
     <>
@@ -77,11 +103,13 @@ export default function Home() {
         </div>
       </section>
 
+      <ToolsMarquee />
+
       {/* WHY */}
       <section className="section" id="why">
         <div className="container">
           <div className="section-header">
-            <div className="section-label">// WHY THIS EXISTS</div>
+            <div className="section-label">// THE THESIS</div>
             <h2 className="section-title">Built because tutorials <em>aren&apos;t enough.</em></h2>
             <p className="section-subtitle">The gap between &ldquo;hello world&rdquo; scripts and real-world automation is massive. AutoLab bridges it.</p>
           </div>
@@ -121,7 +149,7 @@ export default function Home() {
       <section className="section" id="how">
         <div className="container">
           <div className="section-header">
-            <div className="section-label">// HOW IT WORKS</div>
+            <div className="section-label">// THE WORKFLOW</div>
             <h2 className="section-title">Five steps. <em>No shortcuts.</em></h2>
           </div>
           <div className="steps">
@@ -173,7 +201,7 @@ export default function Home() {
       <section className="section" id="levels">
         <div className="container">
           <div className="section-header">
-            <div className="section-label">// CHALLENGES — TIER 1</div>
+            <div className="section-label">// CHALLENGES</div>
             <h2 className="section-title">Start here. <em>Level up.</em></h2>
             <p className="section-subtitle">Each challenge is a controlled website with a specific automation goal. Solve them in order, or jump to what interests you.</p>
           </div>
