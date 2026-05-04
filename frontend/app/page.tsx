@@ -38,7 +38,7 @@ export default function Home() {
           </a>
           <ul className="nav-links">
             <li><a href="#why">Why</a></li>
-            <li><a href="#how">How it works</a></li>
+            <li><a href="#how">Get Started</a></li>
             <li><a href="#levels">Challenges</a></li>
             <li><a href="#tools">Docs</a></li>
             <li>
