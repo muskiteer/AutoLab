@@ -10,7 +10,7 @@ AutoLab is a hands-on learning environment for browser automation tools (Playwri
 - Play with three starter challenges (login form, paginated table, timed form).
 - Tool-agnostic: solve challenges using Node.js, Python, Java, or any supported language.
 - Simple workflow: run locally, write a script, verify output, then optionally submit a PR with your solution.
-
+    
 ## Prerequisites
 - Node.js (recommended 18+), npm/yarn/pnpm
 - For Playwright or Puppeteer: install the tool and browsers per their docs

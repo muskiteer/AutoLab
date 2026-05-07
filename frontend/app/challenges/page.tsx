@@ -5,13 +5,13 @@ import { useState } from "react";
 const CHALLENGES = [
   {
     id: "01",
-    title: "The Login Gate",
-    hint: "Fill a form. Submit. Extract what's hidden behind it.",
+    title: "The Tasks Grabber",
+    hint: "Login with the given credentials. Scrape Today's tasks from the dashboard.",
     tag: "EASY",
     tagClass: "tag-easy",
-    href: "/challenges/01-login-form/index.html",
-    goal: "Bypass the login form by entering any credentials and extract the secret token displayed on the dashboard.",
-    learn: "Locating input fields, typing text, clicking submit buttons, and waiting for navigation or specific elements to appear.",
+    href: "/level-1/index.html",
+    goal: "Login with the credentials {Automata:AutoLab} and extract all uncompleted tasks from the Today's tasks section on the dashboard. Output the results as a list of task names.",
+    learn: "Locating input fields, typing text, clicking submit buttons, waiting for page navigation, and extracting data from dynamic UI elements.",
     locked: false,
   },
   {
@@ -20,7 +20,7 @@ const CHALLENGES = [
     hint: "Multiple pages of data. Collect it all. Output as JSON.",
     tag: "EASY",
     tagClass: "tag-easy",
-    href: "/challenges/02-data-table/index.html",
+    href: "/level-2/index.html",
     goal: "Iterate through all pages of the data table and extract every row into a structured JSON array.",
     learn: "Looping through pages, identifying 'next page' buttons, extracting table row data, and handling pagination state.",
     locked: false,
@@ -64,7 +64,7 @@ export default function Challenges() {
         <div className="container nav-inner">
           <a className="nav-logo" href="/">
             <span className="logo-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <svg suppressHydrationWarning xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
             </span>
             AUTO<span>LAB</span>
           </a>
@@ -75,7 +75,7 @@ export default function Challenges() {
             <li><a href="/#tools">Docs</a></li>
             <li>
               <a className="nav-gh" href="https://github.com/muskiteer/autolab" target="_blank" rel="noreferrer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                <svg suppressHydrationWarning xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                 GitHub
               </a>
             </li>
@@ -108,7 +108,7 @@ export default function Challenges() {
                 <div style={{ display: "flex", alignItems: "center", gap: "1.25rem", width: "100%" }}>
                   <div className="level-status">
                     {ch.locked ? (
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                      <svg suppressHydrationWarning xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                     ) : (
                       <div className="level-status-dot"></div>
                     )}
@@ -121,7 +121,7 @@ export default function Challenges() {
                   <div className={`level-tag ${ch.tagClass}`}>{ch.tag}</div>
                   {!ch.locked && (
                     <div className="level-arrow" style={{ transform: expandedId === ch.id ? "rotate(90deg)" : "none", transition: "transform 0.3s var(--transition)" }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg suppressHydrationWarning xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="9 18 15 12 9 6"></polyline>
                       </svg>
                     </div>
@@ -155,9 +155,9 @@ export default function Challenges() {
                       </div>
                     </div>
                     <div style={{ marginTop: "0.5rem" }}>
-                      <a href={ch.href} className="btn-main" style={{ padding: "12px 24px", fontSize: "12px" }} onClick={(e) => e.stopPropagation()}>
+                      <a href={ch.href} target="_blank" rel="noreferrer" className="btn-main" style={{ padding: "12px 24px", fontSize: "12px" }} onClick={(e) => e.stopPropagation()}>
                         <span>Launch Challenge</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        <svg suppressHydrationWarning xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                       </a>
                     </div>
                   </div>
@@ -173,7 +173,7 @@ export default function Challenges() {
         <div className="container footer-inner">
           <div className="footer-left">
             <div className="footer-logo">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <svg suppressHydrationWarning xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
               AUTOLAB
             </div>
             <div className="footer-note">Open source · Built for automation engineers</div>

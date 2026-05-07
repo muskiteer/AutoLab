@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Assignment Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-container">
+        <div class="login-card">
+            <div class="logo-placeholder"></div>
+            <h2>Employee Portal</h2>
+            <div id="login-error" class="error-message hidden">
+                <span class="error-icon">⚠</span>
+                Invalid credentials. Access denied.
+            </div>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Employee ID</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="username" name="username" required autocomplete="off" placeholder="Enter your ID">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="password">Security Key</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="login-btn" class="primary-btn">Authenticate Session</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Screen -->
+    <div id="dashboard" class="dashboard-container hidden">
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Task Assignment Portal</h1>
+                </div>
+                <div class="header-right">
+                    <div class="date-container">
+                        <span class="calendar-icon">📅</span>
+                        <span id="current-date" class="current-date"></span>
+                    </div>
+                    <button id="logout-btn" class="secondary-btn">Disconnect</button>
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div class="section-header">
+                    <h2 class="section-title">Today's Assigned Tasks</h2>
+                    <div class="filters">
+                        <span class="filter-label">Sort by:</span>
+                        <select class="filter-select">
+                            <option value="priority">Priority</option>
+                            <option value="time">Time</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="task-grid" id="task-list">
+                    <!-- Task 1 (Delayed Loading via JS) -->
+                    <div id="task-1-container" class="task-container">
+                        <div id="task-1-loader" class="loader-skeleton">
+                            <div class="spinner"></div>
+                            <span class="loader-text">Decrypting task payload...</span>
+                        </div>
+                        <!-- Content will be injected here -->
+                    </div>
+
+                    <!-- Task 2 (Static) -->
+                    <div class="task-container">
+                        <div class="task-card" data-task-id="T-802">
+                            <div class="task-header">
+                                <div class="task-icon analyze-icon">🔍</div>
+                                <div class="badge-wrapper">
+                                    <span class="badge priority-high">High Priority</span>
+                                </div>
+                            </div>
+                            <div class="task-body">
+                                <h3 class="task-title">Database Integrity Scan</h3>
+                                <div class="task-meta">
+                                    <span class="meta-icon">🕒</span>
+                                    <p class="task-time">Assigned: 08:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="task-footer">
+                                <div class="status-indicator">
+                                    <span class="status pending">Pending Execution</span>
+                                </div>
+                                <div class="action-wrapper">
+                                    <button class="action-btn start-task">Initiate</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task 3 (Static) -->
+                    <div class="task-container">
+                        <div class="task-card" data-task-id="T-803">
+                            <div class="task-header">
+                                <div class="task-icon backup-icon">💾</div>
+                                <div class="badge-wrapper">
+                                    <span class="badge priority-medium">Medium Priority</span>
+                                </div>
+                            </div>
+                            <div class="task-body">
+                                <h3 class="task-title">Server Log Archival</h3>
+                                <div class="task-meta">
+                                    <span class="meta-icon">🕒</span>
+                                    <p class="task-time">Assigned: 09:15 AM</p>
+                                </div>
+                            </div>
+                            <div class="task-footer">
+                                <div class="status-indicator">
+                                    <span class="status completed" style="color: var(--status-success);">Completed</span>
+                                </div>
+                                <div class="action-wrapper">
+                                    <button class="action-btn" disabled style="opacity: 0.5; cursor: not-allowed;">Done</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task 4 (Static) -->
+                    <div class="task-container">
+                        <div class="task-card" data-task-id="T-804">
+                            <div class="task-header">
+                                <div class="task-icon analyze-icon">⚙</div>
+                                <div class="badge-wrapper">
+                                    <span class="badge priority-medium">Medium Priority</span>
+                                </div>
+                            </div>
+                            <div class="task-body">
+                                <h3 class="task-title">API Endpoint Testing</h3>
+                                <div class="task-meta">
+                                    <span class="meta-icon">🕒</span>
+                                    <p class="task-time">Assigned: 10:00 AM</p>
+                                </div>
+                            </div>
+                            <div class="task-footer">
+                                <div class="status-indicator">
+                                    <span class="status in-progress">In Progress</span>
+                                </div>
+                                <div class="action-wrapper">
+                                    <button class="action-btn complete-task">Complete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task 5 (Static) -->
+                    <div class="task-container">
+                        <div class="task-card" data-task-id="T-805">
+                            <div class="task-header">
+                                <div class="task-icon alert-icon">🔒</div>
+                                <div class="badge-wrapper">
+                                    <span class="badge priority-high">High Priority</span>
+                                </div>
+                            </div>
+                            <div class="task-body">
+                                <h3 class="task-title">Security Patch Deployment</h3>
+                                <div class="task-meta">
+                                    <span class="meta-icon">🕒</span>
+                                    <p class="task-time">Assigned: 06:45 AM</p>
+                                </div>
+                            </div>
+                            <div class="task-footer">
+                                <div class="status-indicator">
+                                    <span class="status completed" style="color: var(--status-success);">Completed</span>
+                                </div>
+                                <div class="action-wrapper">
+                                    <button class="action-btn" disabled style="opacity: 0.5; cursor: not-allowed;">Done</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task 6 (Static) -->
+                    <div class="task-container">
+                        <div class="task-card" data-task-id="T-806">
+                            <div class="task-header">
+                                <div class="task-icon backup-icon">📝</div>
+                                <div class="badge-wrapper">
+                                    <span class="badge priority-low">Low Priority</span>
+                                </div>
+                            </div>
+                            <div class="task-body">
+                                <h3 class="task-title">Update Documentation</h3>
+                                <div class="task-meta">
+                                    <span class="meta-icon">🕒</span>
+                                    <p class="task-time">Assigned: 11:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="task-footer">
+                                <div class="status-indicator">
+                                    <span class="status pending">Pending Execution</span>
+                                </div>
+                                <div class="action-wrapper">
+                                    <button class="action-btn start-task">Initiate</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
