@@ -9,11 +9,11 @@ const CHALLENGES = [
     hint: "Login with the given credentials. Scrape Today's tasks from the dashboard.",
     tag: "EASY",
     tagClass: "tag-easy",
-    href: "/level-1/index.html",
+    href: "/Foundation-Labs/level-1/index.html",
     goal: "Login with the credentials {Automata:AutoLab} and extract all uncompleted tasks from the Today's tasks section on the dashboard. Output the results as a list of task names.",
     learn: "Locating input fields, typing text, clicking submit buttons, waiting for page navigation, and extracting data from dynamic UI elements.",
     locked: false,
-  },
+  },  
   {
     id: "02",
     title: "Paginated Table",
